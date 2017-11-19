@@ -1,0 +1,35 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en-lang">
+<head>
+    <meta charset="utf-8">
+    <title>CUET Online Registration</title>
+    <link href="~/Style/regi2styl.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header">
+        <img id="logo" src="~/Style/Image/CUET_logo.png" />
+        <h1>Chittagong University of Engineering & Technology</h1>
+        <h2>Online Registration</h2>
+    </div>
+    <div class="navigator">
+         <ul>
+             <li><a href="~/Account/Index.html">Home</a></li>
+             <li><a href="@Href("~/StdHome/Index")">StdProfile</a></li>
+             <li><a href="#">Registrtion</a></li>
+             <li><a href="@Href("~/StdHome/About")">About</a></li>
+             <li><a href="@Href("~/Account/LogOut")">LogOut</a></li>
+             <li><a href="@Href("~/UserInfo/Edit")">ChangePassword</a></li>
+         </ul>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        <span>Copyright©2015</span>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

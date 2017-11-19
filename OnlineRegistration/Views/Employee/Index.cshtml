@@ -1,0 +1,48 @@
+﻿
+@model List<OnlineRegistration.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="InfoTable">
+    <thead>
+        <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Department</th>
+            <th>Address</th>
+            <th>ContactNo</th>
+            <th>Email</th>
+            <th>BloodGroup</th>
+            <th>Sex</th>
+            <th>JoiningDate</th>
+            <th>UserName</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td><img src="@emp.PhotoByteString" alt="BioPhoto" width="50" height="50" /></td>
+                <td>@emp.EmployeeName</td>
+                <td>@emp.EmployeeCode</td>
+                <td>@emp.DepartmentName</td>
+                <td>@emp.Address</td>
+                <td>@emp.ContactNo</td>
+                <td>@emp.Email</td>
+                <td>@emp.BloodGroup</td>
+                <td>@emp.Sex</td>
+                <td>@emp.JoiningDate</td>
+                <td>@emp.UserName</td>
+                <td>@emp.Password</td>
+                <td><a href="/Employee/Edit?EmployeeId=@emp.EmployeeId">Edit</a></td>
+                <td><a href="/Employee/Delete?EmployeeId=@emp.EmployeeId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

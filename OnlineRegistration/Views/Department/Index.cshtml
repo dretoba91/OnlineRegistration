@@ -1,0 +1,24 @@
+﻿@model List<OnlineRegistration.Models.Department>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Index</h2>
+<table class="InfoTable">
+    <tr>
+        <th>Name</th>
+        <th>Code</th>
+    </tr>
+    @foreach (var dpt in Model)
+    {
+        <tr>
+        <td>@dpt.DepartmentName</td>
+        <td>@dpt.DepartmentCode</td>
+        <td><a href="/Department/Edit?DepartmentId=@dpt.DepartmentId">Edit</a></td>
+        <td><a href="/Department/Delete?DepartmentId=@dpt.DepartmentId">Delete</a></td>
+        </tr>
+     }
+</table>
+

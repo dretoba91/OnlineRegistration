@@ -1,0 +1,27 @@
+﻿@model List<OnlineRegistration.Models.UserInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="InfoTable">
+    <tr>
+        <th>UserName</th>
+        <th>UserType</th>
+        <th>Password</th>
+    </tr>
+    
+        @foreach (var usrinf in Model)
+        {
+            <tr>
+                <td>@usrinf.UserName</td>
+                <td>@usrinf.UserTypeCode</td>
+                <td>@usrinf.Password</td>
+                <td><a href="/UserInfo/Edit?EmpOrStudent=@usrinf.EmpOrStdId">Edit</a></td>
+                <td><a href="/UserInfo/Delete?EmpOrStdId=@usrinf.EmpOrStdId">Delete</a></td>
+
+            </tr>
+        }
+</table>

@@ -1,0 +1,104 @@
+﻿@model List<OnlineRegistration.Models.LogInData>
+@{
+    ViewBag.Title = "EmployeeIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+                                <h2>EmployeeIndex</h2>
+<div class="InfoForm">
+    @foreach (var usr in Model)
+    {
+        <div class="wraper">
+            <div class="left">
+                <span>UserName:</span>
+            </div>
+            <div class="right">
+                <span>@usr.UserName</span>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="left">
+                <span>UserType:</span>
+            </div>
+            <div class="right">
+                <span>@usr.UserTypeCode</span>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="left">
+                <span>Employee Name:</span>
+            </div>
+            <div class="right">
+                <span>@usr.EmployeeName</span>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="left">
+                <span>Id:</span>
+            </div>
+            <div class="right">
+                <span>@usr.EmployeeCode</span>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="left">
+                <span>Department:</span>
+            </div>
+            <div class="right">
+                <span>@usr.DepartmentName</span>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="left">
+                <span>JoiningDate:</span>
+            </div>
+            <div class="right">
+                <span>@usr.JoiningDate</span>
+            </div>
+        </div> 
+        <div class="wraper">
+            <div class="left">
+                <span>Sex:</span>
+            </div>
+            <div class="right">
+                <span>@usr.Sex</span>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="left">
+                <span>Address:</span>
+            </div>
+            <div class="right">
+                <span>@usr.Address</span>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="left">
+                <span>BloodGroup:</span>
+            </div>
+            <div class="right">
+                <span>@usr.BloodGroup</span>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="left">
+                <span>Email:</span>
+            </div>
+            <div class="right">
+                <span>@usr.Email</span>
+            </div>
+        </div>
+        <div class="wraper">
+            <div class="left">
+                <span>Contact No.:</span>
+            </div>
+            <div class="right">
+                <span>@usr.ContactNo</span>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+

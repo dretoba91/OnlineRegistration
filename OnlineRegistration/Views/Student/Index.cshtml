@@ -1,0 +1,54 @@
+﻿@model List<OnlineRegistration.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="InfoTable">
+    <thead>
+        <tr>
+            <th>Photo<th>
+            <th>Name</th>
+            <th>FatherName</th>
+            <th>MotherName</th>
+            <th>DateOfBirth</th>
+            <th>AdmissionYear</th>
+            <th>Code</th>
+            <th>Department</th>
+            <th>Hall</th>
+            <th>BloodGroup</th>
+            <th>Sex</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>ContactNo</th>
+            <th>UserName</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stu in Model)
+        {
+            <tr>
+                <td><img src="@stu.PhotoByteString" alt="BioPhoto" width="50" height="50" /></td>
+                <td>@stu.StudentName</td>
+                <td>@stu.FatherName</td>
+                <td>@stu.MotherName</td>
+                <td>@stu.DateOfBirth</td>
+                <td>@stu.AdmissionYear</td>
+                <td>@stu.StudentCode</td>
+                <td>@stu.DepartName</td>
+                <td>@stu.Hall</td>
+                <td>@stu.BloodGroup</td>
+                <td>@stu.Sex</td>
+                <td>@stu.Address</td>
+                <td>@stu.Email</td>
+                <td>@stu.ContactNo</td>
+                <td>@stu.UserName</td>
+                <td>@stu.Password</td>
+                <td><a href="/Student/Edit?StudentId=@stu.StudentId">Edit</a></td>
+                <td><a href="/Student/Delete?StudentId=@stu.StudentId">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

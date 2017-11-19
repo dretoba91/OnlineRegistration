@@ -1,0 +1,28 @@
+﻿@model List<OnlineRegistration.Models.Subject>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Index</h2>
+<table class="InfoTable">
+    <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Credit</th>
+        <th>Type</th>
+    </tr>
+    @foreach (var sub in Model)
+    {
+        <tr>
+            <td>@sub.SubjectName</td>
+            <td>@sub.SubjectCode</td>
+            <td>@sub.Credit</td>
+            <td>@sub.SubjectType</td>
+            <td><a href="/Subject/Edit?SubjectId=@sub.SubjectId">Edit</a></td>
+            <td><a href="/Subject/Delete?SubjectId=@sub.SubjectId">Delete</a></td>
+        </tr>
+    }
+</table>
+

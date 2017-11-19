@@ -1,0 +1,24 @@
+﻿@model List<OnlineRegistration.Models.Term>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="InfoTable">
+    
+    <tr>
+        <th>TermCode</th>
+    </tr>
+    @foreach (var trm in Model)
+    {
+        <tr>
+            <td>@trm.TermCode</td>
+            <td><a href="/Term/Edit?TermId=@trm.TermId">Edit</a></td>
+            <td><a href="/Term/Delete?TermId=@trm.TermId">Delete</a></td>
+        </tr>
+    }
+
+</table>
+

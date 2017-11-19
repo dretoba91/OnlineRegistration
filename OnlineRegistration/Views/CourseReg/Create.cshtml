@@ -1,0 +1,80 @@
+﻿@model OnlineRegistration.Models.CourseReg
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+@using ( Html.BeginForm("Create","CourseReg",FormMethod.Post,new { @class="InfoForm"}) )
+{
+    <div class="wraper">
+        <div class="left">
+            <span>Employee(As Adviser):</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.EmployeeId, ( List< SelectListItem > ) ViewData["EmployeeList"],new { @class ="fullwidth" } )
+        </div>
+    </div>
+    
+    
+    <div class="wraper">
+        <div class="left">
+            <span>Studetn Id From(Example:1204005):</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.From, new { @class="fullwidth"})
+        </div>
+    </div>
+    
+    
+    <div class="wraper">
+        <div class="left">
+            <span>Studetn Id To(Example:1204005):</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.To, new { @class="fullwidth"})
+        </div>
+    </div>
+    
+    <div class="wraper">
+        <div class="left">
+            <span>Registration Date:</span>
+        </div>
+        <div class="right">
+            @Html.EditorFor(x => x.CourseRegDate, new { @class = "fullwidth"} )
+        </div>
+    </div>
+    
+    <div class="wraper">
+        <div class="left">
+            <span>Money Received:</span>
+        </div>
+        <div class="right">
+            @Html.RadioButtonFor(x => x.IsDeposite,true)<span>YES</span>
+            @Html.RadioButtonFor(x => x.IsDeposite, false)<span>NO</span>
+        </div>
+    </div>
+    
+    <div class="wraper">
+        <div class="left">
+            <span>Approved:</span>
+        </div>
+        <div class="right">
+            @Html.RadioButtonFor(x => x.Approval,true)<span>YES</span>
+            @Html.RadioButtonFor(x => x.Approval, false)<span>NO</span>
+        </div>
+    </div>
+    
+    <div class="wraper">
+
+        <div class="left">
+
+        </div>
+        <div class="right">
+            <input type="submit" value="Submit" />
+        </div>
+    </div>
+}
+

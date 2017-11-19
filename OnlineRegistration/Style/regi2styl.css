@@ -1,0 +1,104 @@
+.photo
+{
+    margin:5px;
+    padding:5px;
+    border:1px solid black;
+    height:auto;
+    width:auto;
+    float:left;
+    text-align:center;
+}
+.fullwidth
+{
+	width:100%;
+}
+.InfoForm
+{
+	width:400px;
+	margin-left:35%;
+}
+.wraper
+{
+	width:100%;
+	clear:both;
+	float:left;
+	padding:15px;
+}
+.left
+{
+	width:40%;
+	float:left;
+}
+.right
+{
+	width:60%;
+	float:right;
+}
+.header
+{
+	background-color:lightgrey;
+	text-align:center;
+	padding:3px;
+}
+img#logo
+{
+	width:150px;
+	height:180px;
+}
+.footer
+{
+	background-color:lightgrey;
+	text-align:center;
+	padding:5px;
+	clear:both;
+     
+    position:fixed;
+    height:2%;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+}
+.InfoTable, td, th 
+{
+    border: 1px solid green;
+}
+th
+{
+    background-color: green;
+    color: white;
+}
+
+/*Navigation*/
+.navigator ul
+{
+	width: 100%;
+	float: left;
+	margin: 0 0 3em 0;
+	padding: 0;
+	list-style: none;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #ccc;/*width style color*/
+	border-top: 1px solid #ccc;
+}
+
+.navigator li
+{
+	float: left;
+}
+
+.navigator a
+{
+	display: block;
+	padding: 8px 30px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #069;
+	border-right: 1px solid #ccc;
+}
+
+.navigator  a:hover
+{
+	color: #c00;
+	background-color:#fff;
+}

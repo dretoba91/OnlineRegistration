@@ -1,0 +1,56 @@
+﻿@model OnlineRegistration.Models.SubjectAssign
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Create", "SubjectAssign", FormMethod.Post, new { @class = "InfoForm"}))
+{
+    <!-------------Department---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Department:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.DepartmentId, (List < SelectListItem >) ViewData["DepartmentList"], new { @class = "fullwidth" })
+        </div>
+    </div>
+    
+    <!-------------Level---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Level:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.LevelId, (List < SelectListItem >) ViewData["LevelList"], new { @class = "fullwidth" })
+        </div>
+    </div>
+    
+    <!-------------Term---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Term:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.TermId, (List < SelectListItem >) ViewData["TermList"], new { @class = "fullwidth" })
+        </div>
+    </div>
+    <!-------------Subject---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Subject:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.SubjectId, (List < SelectListItem >) ViewData["SubjectList"], new { @class = "fullwidth" })
+        </div>
+    </div>
+
+     
+}
+

@@ -1,0 +1,32 @@
+﻿@model List<OnlineRegistration.Models.ControlNotice>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="InfoTable">
+    <tr>
+        <th>Department</th>
+        <th>Level</th>
+        <th>Term</th>
+        <th>Start DateTime</th>
+        <th>End DateTime</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var connot in Model)
+    {
+        <tr>
+            <td>@connot.Year</td>
+            <td>@connot.DepartmentName</td>
+            <td>@connot.LevelCode</td>
+            <td>@connot.TermCode</td>
+            <td>@connot.StartDate</td>
+            <td>@connot.EndDate</td>
+            <td>@connot.OnOff</td>
+            <td><a href="/ControlNotice/Edit?ControlNoticeId=@connot.ControlNoticeId">Edit</a></td>
+            <td><a href="/ControlNotice/Delete?ControlNoticeId=@connot.ControlNoticeId">Delete</a></td>
+        </tr>
+    }
+</table>

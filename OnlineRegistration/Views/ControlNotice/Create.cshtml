@@ -1,0 +1,102 @@
+﻿@model OnlineRegistration.Models.ControlNotice
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "ControlNotice", FormMethod.Post, new { @class = "InfoForm" }))
+{
+    <div class="wraper">
+        <div class="left">
+            <span>Year:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.Year, ( List < SelectListItem > ) ViewData["YearList"], new { @class = "fullwidth" })
+        </div>
+    </div>
+    
+    <div class="wraper">
+        <div class="left">
+            <span>Department:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.DepartmentId, ( List < SelectListItem > ) ViewData["DepartmentList"], new { @class = "fullwidth" })
+        </div>
+    </div>
+    
+    <div class="wraper">
+        <div class="left">
+            <span>Level:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.LevelId, (List<SelectListItem>)ViewData["LevelList"], new { @class = "fullwidth" })
+       </div>
+    </div>
+    
+    <div class="wraper">
+
+        <div class="left">
+            <span>Term:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.TermId, (List<SelectListItem>)ViewData["TermList"], new { @class = "fullwidth" })
+        </div>
+    </div>
+    <!----------------------Start--------------------->
+    <div class="wraper">
+        <div class="left">
+            <span>Start Date:</span>
+        </div>
+        <div class="right">
+           @Html.EditorFor(x => x.StartDate)
+        </div>
+    </div>
+    @*<div class="wraper">
+        <div class="left">
+            <span>Start Time:</span>
+        </div>
+        <div class="right">
+            @Html.EditorFor(x => x.StartTime)
+        </div>
+    </div>
+    *@
+    <div class="wraper">
+        <div class="left">
+            <span>End Date:</span>
+        </div>
+        <div class="right">
+            @Html.EditorFor(x => x.EndDate)
+        </div>
+    </div>
+    @*
+    <div class="wraper">
+        <div class="left">
+            <span>End Time:</span>
+        </div>
+        <div class="right">
+            @Html.EditorFor(x => x.EndTime)
+        </div>
+    </div>*@
+    <!-----------ON-OFF------------>
+    <div class="wraper">
+
+        <div class="left">
+            <span>Switch:</span>
+        </div>
+        <div class="right">
+            @Html.RadioButtonFor(x => x.OnOff, true)<span>ON</span>
+            @Html.RadioButtonFor(x => x.OnOff, false)<span>OFF</span>
+        </div>
+    </div>
+    <div class="wraper">
+
+        <div class="left">
+
+        </div>
+        <div class="right">
+            <input type="submit" value="Submit" />
+        </div>
+    </div>
+}
+

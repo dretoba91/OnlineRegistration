@@ -1,0 +1,150 @@
+﻿@model OnlineRegistration.Models.Employee
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post, new { enctype="multipart/form-data",@class = "InfoForm" }))
+{
+                   <!-------------Name---------------->
+    <div class="wraper">
+        <div class="left">
+            <span>Employee Name:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.EmployeeName, new { @class = "fullwidth" })
+        </div>
+    </div>
+                <!-------------Code---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Employee Code:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.EmployeeCode, new { @class = "fullwidth" })
+        </div>
+    </div>
+               @*<!-------------User Type---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>User Type:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.UserTypeCode, new { @class = "fullwidth" })
+        </div>
+    </div>*@
+    <!-------------Department---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Department:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewData["DepartmentList"], new { @class = "fullwidth" })
+        </div>
+    </div>
+                <!----------------Address---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Address:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.Address, new { @class = "fullwidth" })
+        </div>
+    </div>
+                    <!-------------Contuct Number---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Contuct Number:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.ContactNo, new { @class = "fullwidth" })
+        </div>
+    </div>
+                    <!-------------Email---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Email:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.Email, new { @class = "fullwidth" })
+        </div>
+    </div>
+                     <!----------Bio-Photo----------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Employee Photo:</span>
+        </div>
+        <div class="right">
+            <input type="file" accept="image/jpeg" name="upload" id="upload" />
+        </div>
+    </div>
+    
+                    <!-------------Blood Group----------------> 
+    <div class="wraper">
+
+        <div class="left">
+            <span>Blood Group:</span>
+        </div>
+        <div class="right">
+            @Html.DropDownListFor(x => x.BloodGroup, (List<SelectListItem>)ViewData["BloodGroupList"], new { @class = "fullwidth" })
+        </div>
+    </div>
+                        <!-------------Sex---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Sex:</span>
+        </div>
+        <div class="right">
+            @Html.RadioButtonFor(x=> x.Sex,"Male")<span>Male</span>
+            @Html.RadioButtonFor(x => x.Sex, "Female")<span>Female</span>
+        </div>
+    </div>
+                  <!-------------Joining Date---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Joining Date:</span>
+        </div>
+        <div class="right">
+            @Html.EditorFor(x => x.JoiningDate)
+        </div>
+    </div>      
+    
+    <!-------------Username---------------->
+    <div class="wraper">
+        <div class="left">
+            <span>User Name:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.UserName, new { @class = "fullwidth" })
+        </div>
+    </div>
+    <!-------------Password---------------->
+    <div class="wraper">
+
+        <div class="left">
+            <span>Password:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.Password, new { @class = "fullwidth" })
+        </div>
+    </div>
+       
+    <div class="wraper">
+        <div class="left">
+        </div>
+        <div class="right">
+            <input type="submit" value="Submit"/>
+        </div>
+    </div>
+}
+

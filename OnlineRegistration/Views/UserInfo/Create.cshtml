@@ -1,0 +1,22 @@
+﻿@model OnlineRegistration.Models.UserInfo
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "UserInfo", FormMethod.Post, new { @class = "InfoForm" }))
+{
+
+    
+    <div class="wraper">
+
+        <div class="left">
+
+        </div>
+        <div class="right">
+            <input type="submit" value="Submit" />
+        </div>
+    </div>
+}
+

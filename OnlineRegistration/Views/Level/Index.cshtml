@@ -1,0 +1,21 @@
+﻿@model List<OnlineRegistration.Models.Level>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="InfoTable">
+    <tr>
+        <th>Code</th>
+    </tr>
+    @foreach (var lvl in Model)
+    {
+        <tr>
+            <td>@lvl.LevelCode</td>
+            <td><a href="/Level/Edit?LevelId=@lvl.LevelId">Edit</a></td>
+            <td><a href="/Level/Delete?LevelId=@lvl.LevelId">Delete</a></td>
+        </tr>
+    }
+</table>

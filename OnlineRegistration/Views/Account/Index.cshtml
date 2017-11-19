@@ -1,0 +1,47 @@
+﻿@model OnlineRegistration.Models.UserInfo
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_loginLayout.cshtml";
+}
+
+@using (Html.BeginForm("LogIn", "Account", FormMethod.Post, new { @class = "InfoForm" }))
+{
+
+    <div class="wraper">
+        <div class="left">
+            <span>User Name:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.UserName, new { @class = "fullwidth" })
+        </div>
+    </div>
+    <div class="wraper">
+        <div class="left">
+            <span>Password:</span>
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(x => x.Password, new { @class = "fullwidth" })
+        </div>
+    </div>
+    <div class="wraper">
+
+        <div class="left">
+            <span>UserType:</span>
+        </div>
+        <div class="right">
+            @Html.RadioButtonFor(x => x.UserTypeCode, 1)<span>Student</span>
+            @Html.RadioButtonFor(x => x.UserTypeCode, 2)<span>Employee</span>
+        </div>
+    </div>
+    <div class="wraper">
+        <div class="left">
+          
+        </div>
+        <div class="right">
+          <input type="submit" value="Log In" />
+        </div>
+    </div>
+    
+}
+
